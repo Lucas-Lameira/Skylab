@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio-03</title>
+</head>
+<body>
+    <div id="container">
+        <input type="text" name="nome" value="">
+        <button onclick="adcionar()">Adcionar</button>        
+    </div>
+
+    <!--JAVASCRIPT-->
+    <script>
+        
+        var nomes = ['Katarina', 'Draven', 'Ezreal'];
+        var n = nomes.length
+
+        var container = document.querySelector('div#container');
+        var ulist = document.createElement('ul');
+
+        container.appendChild(ulist);
+
+        var list; 
+        var textName;   
+     
+        for(let i =0; i<n; i++ ){
+        list = document.createElement('li')
+        ulist.appendChild(list);
+
+        textName =  document.createTextNode(nomes[i]);        
+        list.appendChild(textName);
+      }
+        
+        
+        function adcionar () {            
+            var inputElement = document.querySelector('input');                                                                
+                                  
+            list = document.createElement('li')
+            ulist.appendChild(list);
+
+            textName =  document.createTextNode(inputElement.value);        
+            list.appendChild(textName);
+                          
+            inputElement.value = null;    
+        }
+    </script>
+</body>
+</html>

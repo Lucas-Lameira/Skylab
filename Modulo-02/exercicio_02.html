@@ -1,0 +1,35 @@
+<!--
+A partir de um vetor, preencha um <ul> com 3 nomes
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio-02</title>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        var nomes = ['Katarina', 'Draven', 'Ezreal'];
+
+        var container = document.querySelector('div#container');
+        var ulist = document.createElement('ul');
+
+        container.appendChild(ulist);
+
+        var list; 
+        var textName;   
+
+        for(let i =0, n = nomes.length; i<n; i++ ){
+            list = document.createElement('li')
+            ulist.appendChild(list);
+
+            textName =  document.createTextNode(nomes[i]);        
+            list.appendChild(textName);
+        }
+    </script>
+</body>
+</html>

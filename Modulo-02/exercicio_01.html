@@ -1,0 +1,50 @@
+<!--
+    Utilizando o resultado do primeiro desafio, toda vez que o usuário passar o mouse por cima de
+    algum quadrado troque sua cor para uma cor aleatória gerada pela função abaixo:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio-01</title>   
+</head>
+<body>    
+    <button>Click</button>
+    <div id="container">
+        <!--RED SQUARES HERE-->
+    </div>
+
+   <script>
+        const container = document.querySelector('div#container');
+        container.style.display = 'flex';
+        container.style.alignItems = 'center';
+
+        const btn = document.querySelector('button');
+        btn.style.width = '80px';
+        btn.style.height = '48px';
+        btn.style.borderRadius = '8px 30px';
+        btn.style.backgroundColor = 'black';
+        btn.style.color = 'white';
+        btn.style.fontSize = '18px';
+        btn.style.fontWeight = 'bold';
+        btn.style.outlineStyle = 'none'
+
+
+        btn.onclick = function makeSquare () {
+            let square = document.createElement('div');
+            square.setAttribute('class', 'squares');
+            //console.log(square);  
+
+            square.style.backgroundColor = 'red';
+            square.style.height = '100px';
+            square.style.width = '100px';
+            square.style.margin = '20px'
+            square.style.borderRadius = '10px'
+            
+            container.appendChild(square);            
+        }   
+    
+   </script>
+</body>
+</html>
