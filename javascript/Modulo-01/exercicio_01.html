@@ -12,10 +12,23 @@
 <body>    
     <button>Click</button>
     <div id="container">
-        <!--RED SQUARES HERE-->
+        
+        <div class="squares">
+            <!--RED SQUARES HERE-->     
+        </div>  
     </div>
+ 
 
    <script>
+       function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        
         const container = document.querySelector('div#container');
         container.style.display = 'flex';
         container.style.alignItems = 'center';
@@ -29,12 +42,13 @@
         btn.style.fontSize = '18px';
         btn.style.fontWeight = 'bold';
         btn.style.outlineStyle = 'none'
-
+        
+         
 
         btn.onclick = function makeSquare () {
             let square = document.createElement('div');
             square.setAttribute('class', 'squares');
-            //console.log(square);  
+            console.log(square);  
 
             square.style.backgroundColor = 'red';
             square.style.height = '100px';
@@ -42,9 +56,24 @@
             square.style.margin = '20px'
             square.style.borderRadius = '10px'
             
-            container.appendChild(square);            
+            container.appendChild(square);                               
         }   
-    
+
+        let square = document.createElement('div');
+        var text = document.createTextNode('eu sou a lenda');
+        square.appendChild(text);
+        container.appendChild(square);
+        console.log(square);
+
+        square.onmouseover = function changeColor(){
+            var newColor = getRandomColor();
+            square.style.backgroundColor = newColor;
+        }
+
    </script>
 </body>
 </html>
+
+  
+        
+
