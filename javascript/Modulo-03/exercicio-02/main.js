@@ -45,6 +45,7 @@ function userName(){
                 ulist.appendChild(list);
                 list.appendChild(listText);
             } 
+            console.log(response);
            
       })
       .catch(function(error){  
